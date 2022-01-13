@@ -55,13 +55,13 @@ function buildCharts(sample) {
     // 3. Create a const that holds the samples array.
     const samples = data.samples;
 
-    // 4. Create a const that filters the samples for the object with the desired sample number.
-    const resultArray = samples.filter(
+    // 4. Create a var that filters the samples for the object with the desired sample number.
+    let resultArray = samples.filter(
       (sampleNumber) => sampleNumber.id == sample
     );
 
-    //  5. Create a const that holds the first sample in the array.
-    const result = resultArray[0];
+    //  5. Create a var that holds the first sample in the array.
+    let result = resultArray[0];
 
     // 6. Create const's that hold the otu_ids, otu_labels, and sample_values.
     // 7. Create the ticks for the bar chart.
@@ -102,7 +102,7 @@ function buildCharts(sample) {
       mode: "markers",
       marker: {
         color: result.sample_values,
-        colorscale: "Earth",
+        colorscale: "Portland",
         size: result.sample_values,
         //set 'sizeref' to an 'ideal' size given by the formula:
         // sizeref = 2.0 * max(array_of_size_values) / (desired_maximum_marker_size ** 2)
@@ -110,6 +110,8 @@ function buildCharts(sample) {
         sizemode: "area",
       },
     };
+
+    console.log(result.sample_values);
 
     const bubbleData = [trace];
 
@@ -122,5 +124,47 @@ function buildCharts(sample) {
 
     // 3. Use Plotly to plot the data with the data and layout.
     Plotly.react("bubble", bubbleData, bubbleLayout);
+
+    // Deliverable 3:
+    // 1. Create a variable that filters the metadata array for the object with the desired sample number.
+    const metadata = data.metadata;
+    // Filter the data for the object with the desired sample number
+    resultArray = metadata.filter((sampleNum) => sampleNum.id == sample);
+
+    // 2. Create a variable that holds the first sample in the metadata array.
+    result = resultArray[0];
+
+    // 3. Create a const variable that holds the washing frequency.
+    const washingFrequency = parseFloat(result.wfreq);
+
+    // 4. Create the trace for the gauge chart.
+    trace = {
+      value: washingFrequency,
+      type: "indicator",
+      mode: "gauge+number",
+      title: "Scrubs per Week",
+      gauge: {
+        axis: { range: [null, 10], dtick: 2 },
+        bar: { color: "black" },
+        bgcolor: "rainbow",
+        steps: [
+          { range: [0, 2], color: "blue" },
+          { range: [2, 4], color: "green" },
+          { range: [4, 6], color: "yellow" },
+          { range: [6, 8], color: "orange" },
+          { range: [8, 10], color: "red" },
+        ],
+      },
+    };
+
+    const gaugeData = [trace];
+
+    // 5. Create the layout for the gauge chart.
+    const gaugeLayout = {
+      title: "Belly Button Washing Frequency",
+    };
+
+    // 6. Use Plotly to plot the gauge data and layout.
+    Plotly.react("gauge", gaugeData, gaugeLayout);
   });
 }

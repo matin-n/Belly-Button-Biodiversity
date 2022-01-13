@@ -83,7 +83,8 @@ function buildCharts(sample) {
     let trace = {
       x: sample_values,
       y: otu_ids,
-      text: otu_labels,
+      hovertext: otu_labels,
+      hoverinfo: "text",
       type: "bar",
       orientation: "h",
     };

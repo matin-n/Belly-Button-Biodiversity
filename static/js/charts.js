@@ -6,9 +6,13 @@ function init() {
   d3.json("samples.json").then((data) => {
     const sampleNames = data.names;
 
-    sampleNames.forEach((sample) => {
+    // sampleNames.forEach((sample) => {
+    //   selector.append("option").text(sample).property("value", sample);
+    // });
+
+    for (const sample of sampleNames) {
       selector.append("option").text(sample).property("value", sample);
-    });
+    }
 
     // Use the first sample from the list to build the initial plots
     const firstSample = sampleNames[0];
@@ -40,11 +44,12 @@ function buildMetadata(sample) {
     PANEL.html("");
 
     // Use `Object.entries` to add each key and value pair to the panel
-    // Hint: Inside the loop, you will need to use d3 to append new
-    // tags for each key-value in the metadata.
-    Object.entries(result).forEach(([key, value]) => {
+    // Object.entries(result).forEach(([key, value]) => {
+    //   PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+    // });
+    for (const [key, value] of Object.entries(result)) {
       PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
-    });
+    }
   });
 }
 
@@ -110,8 +115,6 @@ function buildCharts(sample) {
         sizemode: "area",
       },
     };
-
-    console.log(result.sample_values);
 
     const bubbleData = [trace];
 

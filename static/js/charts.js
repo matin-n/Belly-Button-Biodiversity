@@ -64,7 +64,7 @@ function buildCharts(sample) {
     const result = resultArray[0];
 
     // 6. Create const's that hold the otu_ids, otu_labels, and sample_values.
-    // 7. Create the yticks for the bar chart.
+    // 7. Create the ticks for the bar chart.
     const [otu_ids, otu_labels, sample_values] = [
       result.otu_ids
         .slice(0, 10)
@@ -75,7 +75,7 @@ function buildCharts(sample) {
     ];
 
     // 8. Create the trace for the bar chart.
-    const trace = {
+    let trace = {
       x: sample_values,
       y: otu_ids,
       text: otu_labels,
@@ -92,5 +92,35 @@ function buildCharts(sample) {
     };
     // 10. Use Plotly to plot the data with the layout.
     Plotly.react("bar", barData, barLayout);
+
+    // Deliverable 2: Create a Bubble Chart
+    // 1. Create the trace for the bubble chart.
+    trace = {
+      x: result.otu_ids,
+      y: result.sample_values,
+      text: result.otu_labels,
+      mode: "markers",
+      marker: {
+        color: result.sample_values,
+        colorscale: "Earth",
+        size: result.sample_values,
+        //set 'sizeref' to an 'ideal' size given by the formula:
+        // sizeref = 2.0 * max(array_of_size_values) / (desired_maximum_marker_size ** 2)
+        sizeref: (2.0 * Math.max(...result.sample_values)) / 100 ** 2,
+        sizemode: "area",
+      },
+    };
+
+    const bubbleData = [trace];
+
+    // 2. Create the layout for the bubble chart.
+    const bubbleLayout = {
+      title: "Bacteria Cultures Per Sample",
+      xaxis: { title: "OTU ID" },
+      hovermode: "x unified",
+    };
+
+    // 3. Use Plotly to plot the data with the data and layout.
+    Plotly.react("bubble", bubbleData, bubbleLayout);
   });
 }

@@ -60,7 +60,7 @@ function buildCharts(sample) {
     // Configuration Options for Plotly
     const config = {
       responsive: true, // Enable Responsive Chart to Window Size
-      scrollZoom: true, // Mousewheel or two-finger scroll zooms the plot
+      // scrollZoom: true, // Mousewheel or two-finger scroll zooms the plot
       displaylogo: false, // Hide the Plotly Logo on the Modebar
       modeBarButtonsToRemove: [
         "zoom2d",

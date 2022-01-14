@@ -111,6 +111,9 @@ function buildCharts(sample) {
     // 9. Create the layout for the bar chart.
     const barLayout = {
       title: "Top 10 Bacteria Cultures Found",
+      font: {
+        family: "Roboto",
+      },
       // yaxis: { categoryorder: "total ascending" },
     };
     // 10. Use Plotly to plot the data with the layout.
@@ -141,6 +144,9 @@ function buildCharts(sample) {
       title: "Bacteria Cultures Per Sample",
       xaxis: { title: "OTU ID" },
       hovermode: "x unified",
+      font: {
+        family: "Roboto",
+      },
     };
 
     // 3. Use Plotly to plot the data with the data and layout.
@@ -183,6 +189,9 @@ function buildCharts(sample) {
     // 5. Create the layout for the gauge chart.
     const gaugeLayout = {
       title: "Belly Button Washing Frequency",
+      font: {
+        family: "Roboto",
+      },
     };
 
     // 6. Use Plotly to plot the gauge data and layout.

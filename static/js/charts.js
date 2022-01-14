@@ -57,6 +57,23 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file
   d3.json("samples.json").then((data) => {
+    // Configuration Options for Plotly
+    const config = {
+      responsive: true, // Enable Responsive Chart to Window Size
+      scrollZoom: true, // Mousewheel or two-finger scroll zooms the plot
+      displaylogo: false, // Hide the Plotly Logo on the Modebar
+      modeBarButtonsToRemove: [
+        "zoom2d",
+        "pan2d",
+        "select2d",
+        "lasso2d",
+        "zoomIn2d",
+        "zoomOut2d",
+        "autoScale2d",
+      ],
+      // displayModeBar: false, // Never Display the Modebar
+    };
+
     // 3. Create a const that holds the samples array.
     const samples = data.samples;
 
@@ -97,7 +114,7 @@ function buildCharts(sample) {
       // yaxis: { categoryorder: "total ascending" },
     };
     // 10. Use Plotly to plot the data with the layout.
-    Plotly.react("bar", barData, barLayout);
+    Plotly.react("bar", barData, barLayout, config);
 
     // Deliverable 2: Create a Bubble Chart
     // 1. Create the trace for the bubble chart.
@@ -127,7 +144,7 @@ function buildCharts(sample) {
     };
 
     // 3. Use Plotly to plot the data with the data and layout.
-    Plotly.react("bubble", bubbleData, bubbleLayout);
+    Plotly.react("bubble", bubbleData, bubbleLayout, config);
 
     // Deliverable 3:
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
@@ -169,6 +186,6 @@ function buildCharts(sample) {
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.react("gauge", gaugeData, gaugeLayout);
+    Plotly.react("gauge", gaugeData, gaugeLayout, config);
   });
 }

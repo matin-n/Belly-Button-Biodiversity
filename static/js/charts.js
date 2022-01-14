@@ -114,6 +114,8 @@ function buildCharts(sample) {
       font: {
         family: "Roboto",
       },
+      plot_bgcolor: "#F8FAFC",
+      paper_bgcolor: "#F8FAFC",
       // yaxis: { categoryorder: "total ascending" },
     };
     // 10. Use Plotly to plot the data with the layout.
@@ -147,6 +149,8 @@ function buildCharts(sample) {
       font: {
         family: "Roboto",
       },
+      plot_bgcolor: "#F8FAFC",
+      paper_bgcolor: "#F8FAFC",
     };
 
     // 3. Use Plotly to plot the data with the data and layout.
@@ -192,6 +196,8 @@ function buildCharts(sample) {
       font: {
         family: "Roboto",
       },
+      plot_bgcolor: "#F8FAFC",
+      paper_bgcolor: "#F8FAFC",
     };
 
     // 6. Use Plotly to plot the gauge data and layout.

@@ -7,7 +7,7 @@
 
 
 ## Purpose
-This project constructs a dashboard to implement data visualization for the types of bacteria within belly buttons within each volunteer. The dataset is anonymized, and each volunteer is assigned a unique ID number. The volunteers are able to identify the top 10 bacterial species in their belly buttons.
+This project constructs a dashboard to implement data visualization for the types of bacteria within belly buttons within each volunteer. The dataset is anonymized, and each volunteer is assigned a unique ID number. As a result, the volunteers can identify the top 10 bacterial species in their belly buttons.
 
 - Data visualizations that are attractive, accessible, and interactive
 - Manipulate, parse, and transform data in JSON format
@@ -15,12 +15,13 @@ This project constructs a dashboard to implement data visualization for the type
 - Deploy an interactive chart to GitHub Pages
 
 ## How To Use
-Select a ID number from the dropdown menu to populate the demographic information and display visualizations.
+Select an ID number from the dropdown menu to populate the demographic information and display visualizations.
 
 <details>
 <summary>Demographic Information</summary>
 
-When a volunteer ID is chosen from the dropdown menu, that person's demographics information, such as location, sex, and age, will be displayed:
+When a volunteer ID is chosen from the dropdown menu, that person's demographic information, such as location, sex, and age, will be displayed:
+
 ![docs/dropdown_menu.png](docs/dropdown_menu.png)
 </details>
 

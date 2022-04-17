@@ -3,9 +3,8 @@
 ## Dashboard
 [Click here to view the live project!](https://matin-n.github.io/Belly-Button-Biodiversity/)
 
-![docs/dashboard.png](docs/dashboard.png)
-
-
+[![dashboard.png](docs/dashboard.png)](https://matin-n.github.io/Belly-Button-Biodiversity/)
+  
 ## Purpose
 This project constructs a dashboard to implement data visualization for the types of bacteria within belly buttons within each volunteer. The dataset is anonymized, and each volunteer is assigned a unique ID number. As a result, the volunteers can identify the top 10 bacterial species in their belly buttons.
 

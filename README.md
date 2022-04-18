@@ -4,7 +4,7 @@
 [Click here to view the live project!](https://matin-n.github.io/Belly-Button-Biodiversity/)
 
 [![dashboard.png](docs/dashboard.png)](https://matin-n.github.io/Belly-Button-Biodiversity/)
-  
+
 ## Purpose
 This project constructs a dashboard to implement data visualization for the types of bacteria within belly buttons within each volunteer. The dataset is anonymized, and each volunteer is assigned a unique ID number. As a result, the volunteers can identify the top 10 bacterial species in their belly buttons.
 
@@ -16,7 +16,7 @@ This project constructs a dashboard to implement data visualization for the type
 ## How To Use
 Select an ID number from the dropdown menu to populate the demographic information and display visualizations.
 
-<details>
+<details open>
 <summary>Demographic Information</summary>
 
 When a volunteer ID is chosen from the dropdown menu, that person's demographic information, such as location, sex, and age, will be displayed:
@@ -24,7 +24,7 @@ When a volunteer ID is chosen from the dropdown menu, that person's demographic 
 ![docs/dropdown_menu.png](docs/dropdown_menu.png)
 </details>
 
-<details>
+<details open>
 <summary>Visualizations</summary>
 
 ### Top 10 Bacterial Species (OTUs)
